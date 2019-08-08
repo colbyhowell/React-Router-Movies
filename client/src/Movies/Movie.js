@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MovieCard from "./MovieCard";
 
 const Movie = props => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState();
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -18,7 +19,7 @@ const Movie = props => {
       .catch(error => {
         console.error(error);
       });
-  }, [id]);
+  }, []);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
